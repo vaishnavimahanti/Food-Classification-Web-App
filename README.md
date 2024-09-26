@@ -22,6 +22,9 @@ Training Process:
 
 The classification head of the VGG16 model is trained with 20 epochs using the Adam optimizer, with a learning rate of 0.001 and a batch size of 32. This results in a validation accuracy of 84.55%. For fine-tuning, the last five layers of the VGG16 base model are unfrozen and trained again with a learning rate of 0.0001. The fine-tuning process yields a validation accuracy of 81.63%.
 
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/e5bcd989-3bba-4ce9-88ef-ef3f279aba4b">
+
+
 Final Evaluation
 
 Final Accuracy on the evaluation set: 0.8476
@@ -48,6 +51,8 @@ Load Testing: The load_test.sh script is run to test system behavior under diffe
 Extended Monitoring: A modified resource monitoring script is run over an extended period to collect further resource usage data.
 Data Analysis: CSV files (load_output.csv and resource_usage.csv) are transferred back to the local machine using scp for analysis.
 Model Termination: The deployed models are terminated using kubectl delete -f /k8s-ml/deploy_hpa/deployment_hpa.yaml.
+
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/6d9ec6fc-24a3-4733-90f3-1be0abe2fb86">
 
 Conclusion:
 
