@@ -45,14 +45,23 @@ Kubernetes Cluster Setup and Model Deployment:
 The following steps outline the deployment of the machine learning model on a Kubernetes cluster:
 
 SSH Key Generation: Use ssh-keygen -t rsa to generate public and private keys for secure access to cloud resources.
+
 Kubernetes Cluster Setup: Inside the nyu-ece6143 project, an experiment is created, and the Kubernetes cluster is set up using a provided setup script.
+
 Container Creation: A Docker container named ml-app is built and pushed to the local distribution registry. The container holds the machine learning model.
+
 Model Transfer: Using the scp command, the model.keras file is transferred to the remote machine.
+
 Deployment with Horizontal Pod Autoscaler (HPA): The deployment_hpa.yaml configuration is used to deploy the model with dynamic scaling.
+
 Resource Monitoring: A Python script from the k8s-ml repository monitors resource utilization, logging data in CSV format.
+
 Load Testing: The load_test.sh script is run to test system behavior under different workloads.
+
 Extended Monitoring: A modified resource monitoring script is run over an extended period to collect further resource usage data.
+
 Data Analysis: CSV files (load_output.csv and resource_usage.csv) are transferred back to the local machine using scp for analysis.
+
 Model Termination: The deployed models are terminated using kubectl delete -f /k8s-ml/deploy_hpa/deployment_hpa.yaml.
 
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/6d9ec6fc-24a3-4733-90f3-1be0abe2fb86">
