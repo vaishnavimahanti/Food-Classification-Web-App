@@ -18,6 +18,9 @@ Zooming: Random zooming by up to 10%.
 Width and Height Shift: Randomly shifts the image width and height by 10%.
 Shear Transformation: Randomly applies shear transformations within the range of 10%.
 
+<img width="714" alt="image" src="https://github.com/user-attachments/assets/719f9f91-d8f5-48d0-b822-998755ed5ca3">
+
+
 Training Process:
 
 The classification head of the VGG16 model is trained with 20 epochs using the Adam optimizer, with a learning rate of 0.001 and a batch size of 32. This results in a validation accuracy of 84.55%. For fine-tuning, the last five layers of the VGG16 base model are unfrozen and trained again with a learning rate of 0.0001. The fine-tuning process yields a validation accuracy of 81.63%.
